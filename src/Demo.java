@@ -4,9 +4,8 @@ import java.util.Scanner;
 public class Demo {
     public static String read(String path) {
 
-        try {
+        try(BufferedReader reader = new BufferedReader(new FileReader(path))) {
 //открываем файл по пути
-            BufferedReader reader = new BufferedReader(new FileReader(path));
             StringBuilder stringBuilder = new StringBuilder();
             String currentString;
 //построчно считываем файл
